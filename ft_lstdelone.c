@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 22:36:58 by malatini          #+#    #+#             */
-/*   Updated: 2021/02/20 15:53:37 by malatini         ###   ########.fr       */
+/*   Created: 2021/02/20 16:19:35 by malatini          #+#    #+#             */
+/*   Updated: 2021/02/20 16:26:34 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Iterates the list ’lst’ and applies ’f’ to the content of each element.
-** NON STANDARD FUNCTION.
-*/
-
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (!f || !lst)
-		return ;
-	while (lst)
+	if (lst)
 	{
-		f(lst->content);
-		lst = lst->next;
+		del(lst->content);
+		free(lst);
 	}
 }
