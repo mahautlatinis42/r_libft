@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 23:15:15 by malatini          #+#    #+#             */
-/*   Updated: 2021/02/20 16:52:10 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/20 20:02:49 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,20 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	//t_list	*tmp;
-	//t_list	*new;
-	//t_list 	*begin;
-	
-	if (!f || !del || !lst)
-		return (NULL);
-	//Itère sur la liste lst et applique la fonction f au contenu de chaque élément.
+	t_list *new;
+	t_list *temp;
+
+	new = NULL;
 	while (lst)
 	{
-		lst = f(lst);
+		if (!(temp = ft_lstnew(f(lst->content))))
+		{
+			ft_lstclear(&new, del);
+			new = NULL;
+			break ;
+		}
 		lst = lst->next;
+		ft_lstadd_back(&new, temp);
 	}
-	return (NULL);
+	return (new);
 }

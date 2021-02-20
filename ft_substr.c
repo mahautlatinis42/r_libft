@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 17:36:31 by mahautlatin       #+#    #+#             */
-/*   Updated: 2021/01/09 15:53:36 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/20 20:56:57 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 ** Allocated and returns a substring from the string 's'.
-**	The substring begins at the index start and is of maximum size 'len'.
+** The substring begins at the index start and is of maximum size 'len'.
 ** NON STANDARD FUNCTION.
 */
 
@@ -23,17 +23,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	i;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
-		return (NULL);
+	i = ft_strlen(s);
+	if (len > i)
+		len = i;
+	if (start > i)
+		len = 0;
 	if (!(sub = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	i = 0;
-	while (s[start] && i < len)
+	while (i < len)
 	{
-		sub[i] = s[start];
-		start++;
+		sub[i] = s[start + i];
 		i++;
 	}
 	sub[i] = '\0';
