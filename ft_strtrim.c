@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 22:33:36 by malatini          #+#    #+#             */
-/*   Updated: 2021/01/10 23:07:54 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/20 14:56:33 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,71 +26,45 @@ int			is_part_of_set(char const c, char const *set)
 	return (0);
 }
 
-size_t		place_fin_str(char const *s1, char const *set)
+char		*beginning(char const *s1, char const *set)
 {
-	size_t end;
-	size_t i;
+	char	*str;
+	size_t	i;
 
 	i = 0;
-	while (s1[i])
+	while (is_part_of_set(s1[i], set))
 		i++;
-	i--;
-	while (is_part_of_set(s1[i], set) == 1 && s1[i] && i > 0)
-		i--;
-	end = i;
-	return (end);
-}
-
-int			same(char const *s1, char const *set)
-{
-	size_t i;
-
-	i = 0;
-	while (s1[i] && is_part_of_set(s1[i], set))
-		i++;
-	if (i == ft_strlen(s1))
-		return (1);
-	return (0);
-}
-
-char		*cpy(char const *s1, char *str, size_t begin, size_t fin_str)
-{
-	int	i;
-
-	i = 0;
-	while (begin <= fin_str)
-	{
-		str[i] = s1[begin];
-		i++;
-		begin++;
-	}
+	str = ft_strdup(s1 + i);
 	return (str);
+}
+
+char		*end(char const *s1, char const *set)
+{
+	int		j;
+	char	*cpy;
+
+	j = 0;
+	while (s1[j])
+		j++;
+	j--;
+	while (is_part_of_set(s1[j], set))
+		j--;
+	j++;
+	if (!(cpy = (char *)malloc(sizeof(char) * (j + 1))))
+		return (NULL);
+	cpy[j] = '\0';
+	while (j-- > 0)
+		cpy[j] = s1[j];
+	return (cpy);
 }
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	length;
-	size_t	fin_str;
-	size_t	begin;
-	char	*str;
+	char	*first;
+	char	*second;
 
-	if (same(s1, set))
-		return (ft_strdup(""));
-	begin = 0;
-	length = 0;
-	i = 0;
-	fin_str = place_fin_str(s1, set);
-	str = NULL;
-	while (s1[i] && i < fin_str)
-	{
-		while (is_part_of_set(s1[i++], set) == 1 && s1[i])
-			begin++;
-		i--;
-		while (i++ < fin_str)
-			length++;
-	}
-	if (!(str = (char *)malloc(sizeof(char) * (length + 1))))
-		return (NULL);
-	return (str = cpy(s1, str, begin, fin_str));
+	first = beginning(s1, set);
+	second = end(first, set);
+	free(first);
+	return (second);
 }
