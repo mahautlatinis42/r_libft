@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 22:36:11 by malatini          #+#    #+#             */
-/*   Updated: 2021/01/10 08:20:45 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/21 12:56:30 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 /*
 ** Outputs the character ’c’ to the given file descriptor.
-** NON STANDARD FUNCTION.
 */
 
 void	ft_putchar_fd(char c, int fd)

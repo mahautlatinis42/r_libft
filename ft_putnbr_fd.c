@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 22:40:08 by malatini          #+#    #+#             */
-/*   Updated: 2021/01/10 11:08:11 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/21 12:59:13 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 /*
 ** Outputs the integer ’n’ to the given file descriptor.
-** NON STANDARD FUNCTION.
 */
 
 void	ft_putnbr_fd(int n, int fd)

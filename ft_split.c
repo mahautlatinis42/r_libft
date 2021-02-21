@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 14:28:26 by mahautlatin       #+#    #+#             */
-/*   Updated: 2021/01/10 15:18:14 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/21 12:59:31 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 /*
 ** Allocates and returns an array of fresh strings.
 ** By spliting s using the character c as a delimiter.
-** NON STANDARD FUNCTION.
 */
 
 char	*ft_strcpyt(char *str, char c)

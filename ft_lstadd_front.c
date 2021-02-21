@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malatini <mahaut.latinis@essca.eu>         +#+  +:+       +#+        */
+/*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 22:19:33 by malatini          #+#    #+#             */
-/*   Updated: 2020/09/07 12:51:16 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/21 11:44:14 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	if (alst == NULL || new == NULL)
+	if (!alst || !new)
 		return ;
-	new->next = *alst;
+	if (*alst)
+		new->next = *alst;
 	*alst = new;
 }

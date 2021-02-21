@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malatini <mahaut.latinis@essca.eu>         +#+  +:+       +#+        */
+/*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 22:00:23 by malatini          #+#    #+#             */
-/*   Updated: 2020/09/07 12:45:40 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/21 11:04:07 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 /*
 ** Writes n zeroed bytes to the string s.
-** If n is zero, bzero() does nothing.
-** LIBC function.
+** If n is zero, bzero() does nothing. DEPRECATED.
 */
 
 void	ft_bzero(void *s, size_t n)

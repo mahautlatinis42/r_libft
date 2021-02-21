@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 22:47:42 by malatini          #+#    #+#             */
-/*   Updated: 2021/01/09 17:05:17 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/21 13:01:24 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 /*
 ** Locates the first occurence of c in s.
 ** The terminating null character is considered to be part of the string.
-** LIBC FUNCTION.
 */
 
 char	*ft_strchr(const char *s, int c)

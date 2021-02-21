@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/05 22:53:39 by mahautlatin       #+#    #+#             */
-/*   Updated: 2021/01/10 15:29:50 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/21 15:54:20 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	int		total_length;
 
+	if (!s1 || !s2)
+		return (NULL);
 	total_length = ft_strlen(s1) + ft_strlen(s2);
 	if (!(single = (char *)malloc(sizeof(char) * (total_length + 1))))
 		return (NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malatini <mahaut.latinis@essca.eu>         +#+  +:+       +#+        */
+/*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/05 17:52:05 by mahautlatin       #+#    #+#             */
-/*   Updated: 2020/09/10 23:23:21 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/21 13:07:27 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 /*
 ** Locates the first occurrence of the string needle in the haystack.
-** OLDER LIBFT SUBJECT. LIBC FUNCTION.
 */
 
 char	*ft_strstr(const char *haystack, const char *needle)
