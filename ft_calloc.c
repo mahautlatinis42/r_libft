@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 22:01:22 by malatini          #+#    #+#             */
-/*   Updated: 2021/02/21 11:16:24 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/23 08:39:57 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*memory;
-	size_t	i;
 
-	i = 0;
-	if (!(memory = malloc(sizeof(size) * count)))
+if (!(memory = (void *)malloc(sizeof(size) * count)))
 		return (NULL);
-	ft_memset(memory, '\0', count);
+	ft_bzero(memory, count * size);
 	return (memory);
 }
