@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 16:22:15 by malatini          #+#    #+#             */
-/*   Updated: 2021/02/21 15:36:18 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/23 07:33:31 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 **	Copies n bytes from memory area src to memory area dst.
 ** If dst and src overlap, behavior is undefined.
 */
-
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

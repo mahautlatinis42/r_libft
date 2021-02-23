@@ -6,7 +6,7 @@
 /*   By: malatini <malatini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 23:09:44 by malatini          #+#    #+#             */
-/*   Updated: 2021/02/21 15:41:42 by malatini         ###   ########.fr       */
+/*   Updated: 2021/02/23 07:35:14 by malatini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,23 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*buffer;
-	size_t	i;
+	const char	*s;
+	char		*d;
+	size_t		i;
 
-	i = -1;
-	buffer = NULL;
-	if (!dst && !src)
-		return (dst);
-	while (++i < len)
-		((unsigned char *)buffer)[i] = ((unsigned char *)src)[i];
-	i = -1;
-	while (++i < len)
-		((unsigned char *)dst)[i] = ((unsigned char *)buffer)[i];
+	s = (const char *)src;
+	d = (char *)dst;
+	if (!d && !s)
+		return (NULL);
+	i = 0;
+	if (d < s)
+		while (len--)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	else
+		while (len--)
+			d[len] = s[len];
 	return ((void *)dst);
 }
